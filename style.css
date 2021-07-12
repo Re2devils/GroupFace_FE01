@@ -1,0 +1,266 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, h2, div, img, section, nav, header, ul, li, a {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.wrapper header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  background-color: #5BC1A6;
+}
+.wrapper header .logo-container {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20px;
+}
+.wrapper header .logo-container #logo {
+  width: 50px;
+  height: 50px;
+  background-color: #FFCE55;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.wrapper header .logo-container #co-name {
+  color: white;
+}
+.wrapper header .menu-container {
+  width: 70%;
+  margin-right: 20px;
+}
+.wrapper header .menu-container #main-menu {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+.wrapper header .menu-container #main-menu li {
+  width: 20%;
+  padding: 10px 5px;
+  background-color: #FFCE55;
+  text-align: center;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  -webkit-transition: background-color 0.3s, font-weight 0.3s;
+  transition: background-color 0.3s, font-weight 0.3s;
+}
+.wrapper header .menu-container #main-menu li:hover {
+  background-color: #fcb400;
+  border: 1px solid #FFCE55;
+  font-weight: bold;
+}
+.wrapper header .menu-container #main-menu li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+}
+.wrapper header .menu-container #hamburger-menu {
+  display: none;
+}
+.wrapper #main-container {
+  width: 80%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: minmax(50px, auto);
+      grid-template: "side-bar search search" minmax(50px, auto) "side-bar content content";
+}
+.wrapper #main-container .search-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: search;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper #main-container .search-container .search-input input[type=text] {
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  background-color: #EEEEEE;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+}
+.wrapper #main-container .search-container .search-btn {
+  width: 70px;
+  background-color: #FFCE55;
+  border-radius: 100px;
+  text-align: center;
+  padding: 7px 0;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.wrapper #main-container .search-container .search-btn i {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.wrapper #main-container .search-container .search-btn:hover {
+  background-color: #fcb400;
+}
+.wrapper #main-container .search-container .search-btn:hover i {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.wrapper #main-container .side-bar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: side-bar;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100vh - 70px);
+  position: sticky;
+  top: 0px;
+  padding-top: 40%;
+  padding-bottom: 40%;
+}
+.wrapper #main-container .side-bar .side-bar-item {
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #F4F7FA;
+  padding: 10px 0;
+  margin: 10px 0;
+  cursor: pointer;
+  position: relative;
+}
+.wrapper #main-container .side-bar .side-bar-item::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 50%;
+  background-color: #fcb400;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.wrapper #main-container .side-bar .side-bar-item:hover {
+  font-weight: bold;
+}
+.wrapper #main-container .side-bar .side-bar-item:hover::before {
+  width: 100%;
+  height: 2px;
+  left: 0;
+}
+.wrapper #main-container .side-bar .side-bar-item:nth-child(4) {
+  border-bottom: none;
+}
+.wrapper #main-container .side-bar .side-bar-footer {
+  text-align: center;
+  margin-top: auto;
+}
+.wrapper #main-container .content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  padding: 0 10px;
+  grid-area: content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper #main-container .content .content-title {
+  margin-bottom: 50px;
+}
+.wrapper #main-container .content .content-main .img-container {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.wrapper #main-container .content .content-main .img-container img {
+  width: 100%;
+  position: absolute;
+  top: -60%;
+}
+
+@media screen and (max-width: 1366px) {
+  .wrapper #main-container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .wrapper #main-container {
+    width: 100%;
+  }
+}
