@@ -71,6 +71,9 @@ body {
                         font-size: 1.3rem;
                     }
                 }
+                #close-menu {
+                    display: none;
+                }
             }
             #hamburger-menu {
                 display: none;
@@ -168,7 +171,7 @@ body {
             grid-area: content;
             @include flex-style(column, center, center);
             .content-title {
-               margin-bottom: 50px;
+               margin: 40px 0;
             }
             .content-main {
                 
@@ -202,6 +205,100 @@ body {
     .wrapper {
         #main-container {
             width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 414px) {
+    .wrapper {
+        header {
+            .logo-container {
+                width: 100%;
+                
+            }
+            .menu-container {
+                #main-menu {
+                    position: fixed;
+                    right: -200%;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: $second-color;
+                    height: 100%;
+                    z-index: 1;
+                    transition: .4s;
+                    li {
+                        width: 80%;
+                        margin: 20px 0;
+                    }
+                    #close-menu {
+                        display: block;
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        font-size: 1.5rem;
+                        color: $primary-color;
+                        cursor: pointer;
+                    }
+    
+                }
+                #hamburger-menu {
+                    display: block;
+                    float: right;
+                    color: $primary-color;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+        #main-container {
+            width: 100%;
+            grid-template: 'search'
+                            'side-bar'
+                             'content';
+            .search-container {
+                padding: 10px;
+                width: 100vw;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .search-input {
+                    @include flex-style(s, center, center);
+                    width: 100vw;
+                    input[type=input] {
+                        width: 100vw;
+                    }
+                }
+                .search-btn {
+                    width: 85vw;
+                    margin: 10px 0;
+                }
+            }
+            .side-bar {
+                position: relative;
+                width: 100vw;
+                padding: 0;
+                height: auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .side-bar-item {
+                    margin: 0;
+                    padding: 0;
+                    border-bottom: none;
+                }
+                .side-bar-footer {
+                    display: none;
+                }
+            }
+            .content {
+                .content-main {
+                    .img-container {
+                        width: 90vw;
+                        img {
+                            top: -40%;
+                        }
+                    }
+                }
+            }
         }
     }
 }
